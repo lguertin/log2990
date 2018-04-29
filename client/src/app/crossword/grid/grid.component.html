@@ -1,0 +1,23 @@
+<div id="grid">
+  <div class="grid-container">
+    <div class="grid-top-positions">
+      <div class="grid-top-position" [style.width]="cellSize" *ngFor="let position of gridPositions">
+        <div class="top-position-tag">{{position}}</div>
+      </div>
+    </div>
+    <div class="grid-side-positions">
+      <div class="grid-side-position" [style.height]="cellSize" *ngFor="let position of gridPositions">
+        <div class="side-position-tag">{{position}}</div>
+      </div>
+    </div>
+    <div class="wrapper" click-outside (clickOutside)="onClickOutside()">
+      <div class="row" [style.height]="cellSize" *ngFor="let row of grid.cells">
+        <div class="cell" [style.width]="cellSize" *ngFor="let cell of row">
+          <div [className]="getCellClass(cell)" (click)="onSelect(cell)">
+            <div class="input-field">{{cell.input}}</div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

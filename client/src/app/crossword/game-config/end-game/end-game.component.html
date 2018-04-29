@@ -1,0 +1,11 @@
+<div id="option_selector">
+  <div class = "message"> {{message}}</div>
+  <div class="optionSelectorBox">
+    <div class="buttons-container">
+      <div class="button" *ngFor="let option of options"
+        (click)="onSelect(option)">
+        <input class="optionButton" type="button" id={{option}} value={{option}}>
+      </div>
+    </div>
+  </div>
+</div>

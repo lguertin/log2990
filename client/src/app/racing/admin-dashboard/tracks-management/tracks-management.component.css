@@ -1,0 +1,134 @@
+.content {
+    height: calc(100% - 40px);
+    width: 100%;
+}
+
+.section {
+    width: 95%;
+    margin: auto;
+}
+
+.section .title {
+    padding: 10px 0 0 20px;
+    color: white;
+    text-transform: uppercase;
+    float: left;
+}
+
+.track-list {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 0px;
+}
+
+.column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 0px;
+}
+
+.column a {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 1200px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.track-element {
+    height: 300px;
+    background-color: white;
+    padding: 5px;
+    margin: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.track-element .thumbnail{
+    height: calc(100% - 30px);
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+    margin: auto;
+}
+
+.track-element .name {
+    height: 20px;
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.track-element:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.track-element:hover .thumbnail {
+    background-color: rgb(129, 129, 129);
+}
+
+button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+}
+
+  
+.button-delete:hover {
+    background-color:#db4d22 !important;
+}
+  
+.button-delete {
+    position: absolute;
+    top: 8px;
+    margin-left: calc(100%-30px);
+    background-color: gray !important;
+    color: white;
+}
+
+.element {
+    height: 300px;
+    width: 100%;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.button-add {
+    margin-top: 6px;
+    margin-left: 16px;
+    background-color: gray !important;
+    color: white;
+    float: left;
+}
+
+.button-add:hover {
+    background-color: rgb(187, 187, 187) !important;
+}
+
+.thumbnail img {
+    height: 100%;
+    width: 100%;
+}
+

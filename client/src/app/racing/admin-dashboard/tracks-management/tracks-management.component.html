@@ -1,0 +1,24 @@
+<div class="content">
+  <div class="section">
+    <div class="title">Manage Racing Tracks</div>
+    <a routerLink="/racing/admin/track/new">
+      <button class="button-add" title = "add new track">+</button>
+    </a>
+    <div class="track-list" *ngIf="tracks">
+      <div class="column" *ngFor="let trackColumn of trackColumns">
+        <div *ngFor="let track of trackColumn" class ="element">
+          <a routerLink="/racing/admin/track/{{track._id}}">
+            <div  class="track-element">
+              <div class="thumbnail">
+                <img src="{{track.image}}">
+              </div>
+              <div class="name">{{track.name}}</div>
+            </div>
+          </a>
+          <button class="button-delete" title="delete the track"
+          (click)="delete(track)">x</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

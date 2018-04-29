@@ -1,0 +1,49 @@
+#race_results {
+    text-align: center;
+    margin: auto;
+}
+ 
+table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+ 
+th, td {
+    padding: 8px;
+}
+ 
+tr:nth-child(even){
+    background-color: #f2f2f2
+}
+ 
+th {
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+ 
+.per-lap-time {
+    margin: 2px;
+}
+
+.next-button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+}
+
+.highscores-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(65, 65, 65);
+}

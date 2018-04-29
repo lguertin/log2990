@@ -1,0 +1,122 @@
+.track-list {
+    display: block;
+    padding: 5%;
+    background-color: rgb(53, 53, 53);
+}
+.track {
+    display: block;
+    background-color:white;
+    margin-bottom: 10px;
+    height: 220px;
+    width: 100%;
+    border: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.track-first-separation {
+    float: left;
+    margin: 30px;
+    width: calc(100% - 60px);
+}
+
+.track-name {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.track-description {
+    margin: 20px 0px 0px 20px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.popup {
+    height: 60%;
+    width: 90%;
+    top: 20%;
+    left: 5%;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    overflow: hidden;
+    text-align: left;
+}
+
+.popup .thumbnail {
+    width: 60%;
+    height: 100%;
+    float: left;
+    background-color: rgb(211, 211, 211);
+}
+
+.popup img {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.popup .closing-button {
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.selected-track-info {
+    padding-top: 20px;
+    padding-left: calc(60% + 20px);
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+}
+
+.selected-track-name {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.selected-track-description {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.selected-leaderboard {
+    margin: 20px 0 20px 0;
+}
+
+.selected-leaderboard-data {
+    margin-left: 20px;
+}
+
+.popup .play-button {
+    width: calc(40% - 40px);
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: none;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,35 @@
+.waiting-body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+}
+
+.waitingBox {
+    height: 50%;
+    line-height: 200px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #363636;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

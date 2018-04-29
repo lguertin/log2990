@@ -1,0 +1,151 @@
+#tab {
+    height: 100%;
+}
+
+.tab-header {
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tab-header-title {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.scrollable-list-container {
+    height: calc(100% - 66px);
+    overflow: auto;
+    background-color: rgb(216, 216, 216);
+}
+
+#horizontal-definitions-list {
+    margin-top: 5px;
+}
+
+#vertical-definitions-list {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.definitions-section-title {
+    padding: 10px;
+    text-transform: uppercase;
+    font: 15px;
+    background-color: rgb(173, 173, 173);
+}
+
+.definitions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.definitions-list li{
+    margin: 2px 0 2px 0;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    min-height: 40px;
+}
+
+.definitions-list li:hover{
+    background-color: rgb(179, 179, 179);
+    transition: 0.5s;
+}
+
+.isSelected{
+
+    background-color: rgb(179, 179, 179);
+}
+
+.discoveredMe {
+   
+    height: 100%;
+    background-color: rgb(70, 144, 204);
+}
+
+.discoveredOpponent {
+   
+    background-color: red;
+}
+
+.definition{
+    padding: 10px;
+    height: 100%;
+}
+
+.definition-tag {
+    display: block;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    height: 20px;
+    width: 20px;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#cheat_mode {
+    width: 100%;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.container input {
+    display: none;
+}
+
+.checkmark {
+    position: relative;
+    margin: 0;
+    padding: 8px 0 0 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: rgb(90, 90, 90);
+    color: rgb(115, 115, 115);
+}
+
+.container:hover input ~ .checkmark {
+    background-color: rgb(73, 73, 73);
+    transition: 0.5s;
+}
+  
+.container input:checked ~ .checkmark {
+    background-color: rgb(212, 76, 76);
+    color: black;
+    transition: 0.5s;
+}
+
+.discovered {
+    text-decoration: line-through;
+}
+

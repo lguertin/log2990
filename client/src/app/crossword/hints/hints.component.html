@@ -1,0 +1,49 @@
+<div id="tab">
+  <div class="tab-header">
+    <div class="tab-header-title">HINTS</div>
+  </div>
+  <div class="scrollable-list-container" click-outside (clickOutside)="onClickOutside()">
+    <div id="horizontal-definitions-list">
+      <div class="definitions-section-title">Horizontal</div>
+      <ul class="definitions-list">
+          <li *ngFor="let hint of horizontalHints" >
+            <div
+              [className]="getClassName(hint)"
+              [class.discovered]= "hint.discovered"
+              [class.isSelected]="hint.isSelected" 
+              (click)="onSelect(hint)"
+              class="definition" 
+              [ngSwitch]="cheatModeisActive">
+              <div class="definition-tag">{{hint.gridWord.posI + 1}}</div>
+              <div *ngSwitchCase="false">{{hint.gridWord.definition}}</div>
+              <div *ngSwitchCase="true">{{hint.gridWord.word}}</div>
+            </div>
+          </li>
+      </ul>
+    </div>
+    <div id="vertical-definitions-list">
+      <div class="definitions-section-title">Vertical</div>
+      <ul class="definitions-list">
+        <li *ngFor="let hint of verticalHints">
+          <div
+            [className]="getClassName(hint)"
+            [class.discovered]= "hint.discovered"
+            [class.isSelected]="hint.isSelected" 
+            (click)="onSelect(hint)"
+            class="definition" 
+            [ngSwitch]="cheatModeisActive">
+            <div class="definition-tag">{{hint.gridWord.posJ + 1}}</div>
+            <div *ngSwitchCase="false">{{hint.gridWord.definition}}</div>
+            <div *ngSwitchCase="true">{{hint.gridWord.word}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="cheat_mode">
+    <label class="container">
+      <input #switch type="checkbox" (click)="toggleCheatMode(switch.checked)">
+      <span class="checkmark">Cheat Mode</span>
+    </label>
+  </div>
+</div>

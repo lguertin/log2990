@@ -1,0 +1,28 @@
+.popup-top-middle {
+    z-index: 99;
+    position: absolute;
+    opacity: 0;
+    font-size: 4.4rem;
+    width: 100%;
+    text-align: center;
+    animation-name: topFadeOut;
+    animation-duration: 10s;
+    color: white;
+    top: 45%;
+}
+
+@keyframes topFadeOut {
+    0% {
+        position: absolute;
+        top: 5%;
+        opacity: 0;
+    }
+    75% {
+        position: absolute;
+        top: 25%;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

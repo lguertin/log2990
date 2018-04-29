@@ -1,0 +1,76 @@
+.highscores {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.popup {
+    height: 60%;
+    width: 80%;
+    margin-top: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popup-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.popup .header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: centre;
+    margin: auto;
+    text-align: center;
+    position: static;
+}
+
+.popup .footer {
+    text-align: center;
+}
+
+.color-button {
+    padding: 10px;
+    width: 200px;
+    margin-top: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    text-align: center;
+    position: static;
+    cursor: pointer;
+}
+
+.popup #restart_race{
+    margin-right: 10px;
+}
+
+.popup #back_to_homepage{
+    margin-left: 10px;
+}
+
+
+.popup .name{
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+.name input {
+    margin: auto;
+}

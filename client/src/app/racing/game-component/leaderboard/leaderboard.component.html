@@ -1,0 +1,29 @@
+<div id="race_results">
+   <table>
+    <tr>
+      <th>Position</th>
+      <th>Player</th>
+      <th>Lap Times</th>
+      <th>Final Time</th>
+    </tr>
+    <tr *ngFor="let player of players; let i = index">
+      <td>#{{i+1}}</td>
+      <td>
+        <div class="player-name">
+          <span>{{player.name}}</span>
+        </div>
+      </td>
+      <td>
+        <div *ngFor="let lapTime of player.statistics.lapTimes; let j = index" class="per-lap-time">
+          <span>{{j+1}}- {{lapTime | date:'mm:ss.SS'}}</span>
+        </div>
+      </td>
+      <td class="total-lap-time">{{player.statistics.finalTime | date:'mm:ss.SS'}}</td>
+    </tr>
+  </table>
+  <button class="next-button" (click)="showHighscores()">Next</button>
+</div>
+<div class="highscores-container" *ngIf="isShowingHighscores">
+  <app-highscores [racePlayers]="players" [trackInformation]="trackInformation"></app-highscores>
+</div>
+

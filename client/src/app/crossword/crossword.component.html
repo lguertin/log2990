@@ -1,0 +1,21 @@
+<div class="crossword-body"[ngSwitch]="state">
+  <app-gamemode-selector *ngSwitchCase="crosswordStateType.GameModeSelector" (selectedEvent)="onGameModeSelected($event)"></app-gamemode-selector>
+  <app-difficulty-selector *ngSwitchCase="crosswordStateType.DifficultySelector" (selectedEvent)="onDifficultySelected($event)"></app-difficulty-selector>
+  <app-multiplayer-rooms *ngSwitchCase="crosswordStateType.MultiplayerRooms" (multiplayerRoom)="onRoomSelectionFinish($event)"></app-multiplayer-rooms>
+  <app-end-game *ngSwitchCase="crosswordStateType.End" (selectedEvent)="onEndSelection($event)" [gridInformation]="gridInformation"></app-end-game>
+  <app-waiting-room *ngSwitchCase="crosswordStateType.WaitingRoom"></app-waiting-room>
+  <div id="crossword" *ngSwitchCase="crosswordStateType.Game">
+      <div id="game_info">
+        <app-game-info [mode]="mode" [difficulty]="difficulty" [points]="points" [maxPoints]="maxPoints" [players]="players"></app-game-info>
+      </div>
+      <div id="grid" *ngIf="words.length > 0" [ngSwitch]="mode">
+        <app-grid-solo *ngSwitchCase="gameModeType.Solo" [gridWords]="words" (playerOneScoreIncrement)="playerOneScoreIncrement($event)" (playerTwoScoreIncrement)="playerTwoScoreIncrement($event)"></app-grid-solo>
+        <app-grid-multiplayer *ngSwitchCase="gameModeType.Multiplayer" [gridWords]="words" (playerOneScoreIncrement)="playerOneScoreIncrement($event)" (playerTwoScoreIncrement)="playerTwoScoreIncrement($event)"></app-grid-multiplayer>
+      </div>
+      <div id="hints" *ngIf="words.length > 0">
+        <app-hints [gridWords]="words"></app-hints>
+      </div>
+  </div>
+</div>
+
+

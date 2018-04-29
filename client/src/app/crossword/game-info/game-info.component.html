@@ -1,0 +1,34 @@
+<div id="game_info">
+  <div class="game-title">
+    Crossword
+  </div>
+  <div class="game-mode">
+    <div id="mode_value">
+      {{mode}}
+    </div>
+  </div>
+  <div class="difficulty">
+    Difficulty:
+    <div id="difficulty_value">
+      <div *ngIf="difficulty">{{difficulty}}</div>
+    </div>
+  </div>
+  <div class="points">
+    <div id="mode_value" [ngSwitch]="mode">
+      <div *ngSwitchCase="gameModeType.Solo">
+        Player
+        <div class="points-bar">
+          <div id="solo_points_bar" [style.width]="getPointsBarLength(points[0])">{{points[0]}}</div>
+        </div>
+      </div>
+      <div *ngSwitchCase="gameModeType.Multiplayer">
+        <div class="player-name-container"><div id="player_name_left">{{players[0]}}</div></div>
+        <div class="player-name-container"><div id="player_name_right">{{players[1]}}</div></div>
+        <div class="points-bar">
+          <div class="points-bar-container"><div id="left_points_bar" [style.width]="getPointsBarLength(points[0])"><div id="points_left">{{points[0]}}</div></div></div>
+          <div class="points-bar-container"><div id="right_points_bar" [style.width]="getPointsBarLength(points[1])"><div id="points_right">{{points[1]}}</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

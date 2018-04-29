@@ -1,0 +1,21 @@
+<div class="highscores">
+  <div class="popup">
+    <div class="popup-content">
+      <div *ngIf="isQualifiedForHighscore() && !isHighscoreNameSaved">
+        <div class = "header">Congratulations, you have reached the top of the leaderboards! Enter your name to save your highscore.</div>
+        <div class="name"> 
+          <div class="inputTitle">Name:</div>
+          <input [(ngModel)]= "localPlayerName">
+        </div>
+        <button class="color-button" (click)="save()">SAVE</button>
+      </div>
+      <div *ngFor="let highscore of trackInformation.bestTimes; let i = index">
+        <span>{{i+1}}.{{highscore.name}} - {{highscore.time | date:'mm:ss.SS'}}</span>
+      </div>
+      <div id="footer">
+        <button id="restart_race" class="color-button" (click)="reloadPage()">Restart Race</button>
+        <a href="/"><button id="back_to_homePage" class="color-button">Back to Home Page</button></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="hud-container">
+  <div class="left-info">
+    <div class="time">
+      <div class="title"><span class="info-title">Time</span></div>
+      <div id="total_time" class="time-value">{{totalTime | date:'mm:ss.SS'}}</div>
+      <div class="title"><span class="info-title">Lap Time</span></div>
+      <div id="lap_time" class="time-value">{{lapTime | date:'mm:ss.SS'}}</div>
+    </div>
+  </div>
+  <div class="right-info">
+    <div class="lap-info">
+      <div class="title"><span class="info-title">Lap</span></div>
+      <div class="lap-value">{{lap}}/{{maxLap}}</div>
+    </div>
+  </div>
+  <div class="bottom-right-info">
+    <div class="meter-container">
+      <div id="speedometer" class="round">
+        <div class="meter round">
+          <div [className]="getSpeedMeterClipMask(getSpeedPercentage())">
+            <div class="left-meter-bar half-circle-bar" [style.transform]="getMeterBarTransform(getSpeedPercentage(), true)"></div>
+            <div class="right-meter-bar half-circle-bar" [style.transform]="getMeterBarTransform(getSpeedPercentage(), false)"></div>
+          </div>
+          <div class="meter-content">
+           <div id="speed-value">{{speed | number :'2.2-2'}}</div>
+           km/h
+          </div>
+        </div>
+      </div>
+      <div id="tachometer" class="round">
+        <div class="meter round">
+          <div [className]="getSpeedMeterClipMask(getRpmPercentage())">
+            <div class="left-meter-bar half-circle-bar" [style.transform]="getMeterBarTransform(getRpmPercentage(), true)"></div>
+            <div class="right-meter-bar half-circle-bar" [style.transform]="getMeterBarTransform(getRpmPercentage(), false)"></div>
+          </div>
+          <div class="meter-content">
+            Gear
+            <div id="gear-value">{{gear + 1}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

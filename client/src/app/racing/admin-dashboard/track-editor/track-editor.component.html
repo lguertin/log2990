@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="section">
+    <div class="title">Track Editor</div>
+    <div class="buttons">
+      <button class="back-button" (click)="goBack()">BACK</button>
+      <button class="save-button" (click)="save()">SAVE</button>
+      <button class="save-button" (click)="saveAs()">SAVE AS</button>
+    </div>
+    <div class="inputField">
+      <div class="inputTitle">Name:</div>
+      <input [(ngModel)]="trackInformation.name" type="text" name="trackName"
+        [className]="getInputClass(trackInformation.name)">
+    </div>
+    <div class="inputField">
+      <div class="inputTitle">Description:</div>
+      <input [(ngModel)]="trackInformation.description" type="text" name="trackDescription" 
+        [className]="getInputClass(trackInformation.description)" id="description">
+    </div>
+    <div #container id="editor"></div>
+  </div>
+</div>

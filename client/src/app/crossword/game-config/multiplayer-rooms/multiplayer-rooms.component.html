@@ -1,0 +1,26 @@
+<div class="fullscreen-popup" *ngIf="isShowingDifficultySelector">
+    <app-difficulty-selector (selectedEvent)="onDifficultySelected($event)"></app-difficulty-selector>
+</div>
+<div id="multiplayer_selector">
+  <div id="page_header">
+    <div id="username_text">
+      Username:
+    </div>
+    <input #username id="username_text" (input)="classInputBox($event.target.value)" [className]="inputBox" type="text">
+    <button  id="create_room_button" (click)="createRoom(username.value)">Create Room</button>
+  </div>
+  <div *ngFor="let room of rooms">
+    <div *ngIf="isRoomAvailable(room)">
+      <div class="room-container" (click)="onSelectRoom(room, username.value)">
+        <div id="room-name">
+          <div class="room-information-title">Room host name:</div> 
+          <div class="room-information-value">{{room.host.name}}</div>
+        </div>
+        <div id="room-difficulty">
+          <div class="room-information-title">Grid Difficulty:</div>
+          <div class="room-information-value">{{room.difficulty}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

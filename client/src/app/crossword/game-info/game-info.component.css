@@ -1,0 +1,111 @@
+#game_info {
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    height:100%;
+    overflow-y: hidden;
+}
+
+.game-title {
+    font: 20px arial, sans-serif;
+    height: 30%;
+}
+
+.game-mode {
+    height: 20%;
+}
+
+.difficulty {
+    height: 20%;
+}
+
+#difficulty_value {
+    display: inline-block;
+}
+
+.points {
+    margin-top: 2px;
+    font-size: 12px;
+    height: calc(30% - 2px);
+}
+
+.player-name-container {
+    display: block;
+    width: 50%;
+    height: 12px;
+    float: left;
+}
+
+#player_name_left {
+    float: right;
+    padding-right: 15px;
+}
+
+#player_name_right {
+    float: left;
+    padding-left: 15px;
+}
+
+.points-bar {
+    display: block;
+    background-color: rgb(161, 161, 161);
+    width: 100%;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#solo_points_bar {
+    display: block;
+    font-size: 20px;
+    background-color: rgb(189, 250, 252);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 60%;
+    transition: 0.5s;
+    height: 100%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+.points-bar-container {
+    display: block;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#left_points_bar {
+    width: 5%;
+    transition: 0.5s;
+    height: 100%;
+    background-color: rgb(70, 144, 204);
+    float: right;
+    border-left: 1px solid white;
+}
+
+#right_points_bar {
+    width: 5%;
+    transition: 0.5s;
+    height: 100%;
+    background-color: rgb(197, 56, 56);
+    float: left;
+    border-right: 1px solid white;
+}
+
+#points_left {
+    font-size: 20px;
+    float: left;
+}
+
+#points_right {
+    font-size: 20px;
+    float: right;
+    padding-right: 0;
+}

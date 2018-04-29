@@ -1,0 +1,37 @@
+.crossword-body {
+    height: 100%;
+    width: 100%;
+}
+
+#crossword {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#game_info {
+    height: 110px;
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+    margin: 0;
+    padding: 0;
+}
+
+#grid {
+    width: 70%;
+    height: calc(100% - 110px);
+    float: left;
+    margin-top: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+#hints {
+    height: calc(100% - 110px);
+    width: 30%;
+    background-color: rgb(100, 100, 100);
+    margin: 0;
+    padding: 0;
+    float: right;
+}

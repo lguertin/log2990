@@ -1,0 +1,18 @@
+<div #container id="game_container">
+  <app-racing-countdown *ngIf="isTrackLoaded" (isCountDownFinished)="onCountDownOver($event)"></app-racing-countdown>
+  <div id="game_hud" *ngIf="isTrackLoaded">
+    <app-game-hud [speed]="this.racingRenderService.car.speed.length() * 3.6" 
+                  [gear]="this.racingRenderService.car.currentGear" 
+                  [rpm]="this.racingRenderService.car.rpm"
+                  [lap]="players[0].statistics.currentLap"
+                  [lapTime]="players[0].currentLapTime"
+                  [totalTime]="players[0].currentTotalTime">
+    </app-game-hud>
+  </div>
+  <div class="fullscreen-popup" *ngIf="isFinished">
+      <app-leaderboard [racePlayers]="players" 
+      [trackInformation]="trackInformation"></app-leaderboard>
+  </div>
+</div>
+
+

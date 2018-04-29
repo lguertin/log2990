@@ -1,0 +1,31 @@
+<div class="popup" *ngIf="isShowingTrackInfo">
+  <button class="closing-button" (click)="closeTrackInfo()">x</button>
+  <div class="thumbnail">
+    <img src="{{selectedTrack.image}}">
+  </div>
+  <div class="selected-track-info">
+    <div class="selected-track-name">{{selectedTrack.name}}</div>
+    <div class="selected-track-description">{{selectedTrack.description}}</div>
+    <div class="number-of-plays">NUMBER OF TIMES PLAYED: {{selectedTrack.numberOfTimesPlayed}}</div>
+    <div class="selected-leaderboard">
+      BEST TIMES:
+      <div class="selected-leaderboard-data"> 
+        <div class="track-time" *ngFor="let time of selectedTrack.bestTimes">
+          {{time.name}}: {{time.time | date:'mm:ss.SS'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="/racing/game/{{selectedTrack._id}}"><button class="play-button">PLAY</button></a>
+</div>
+
+<div class="track-list">
+  <li *ngFor="let track of tracks">
+    <div class="track" (click)="onTrackSelect(track)">
+      <div class="track-first-separation">
+        <div class="track-name">{{track.name}}</div>
+        <div class="track-description" maxlength="120">{{track.description}}</div>
+      </div>
+    </div>
+  </li>
+</div>
