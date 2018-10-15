@@ -1,7 +1,7 @@
 /* tslint:disable:only-arrow-functions */
 
 import { expect } from "chai";
-import { BlackCellFiller } from "./blackCellFiller";
+import { BlackCellFiller } from "../crossword-content-filler/blackCellFiller";
 import { CrossWordGrid } from "../types/crosswordGrid";
 import { GRID_DIMENTION, Direction, BLACK_CELL } from "../../../../../../common/crossword/constant";
 import { MINIMUM_WORD_LENGTH } from "../constant";

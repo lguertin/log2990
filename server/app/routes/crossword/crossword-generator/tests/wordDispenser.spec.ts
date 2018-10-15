@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { WordDispenser } from "./wordDispenser";
-import { GameDifficulty } from "../../../../../common/crossword/constant";
+import { WordDispenser } from "../wordDispenser";
+import { GameDifficulty } from "../../../../../../common/crossword/constant";
 
 const MAX_TIME_FOR_CACHE: number = 20;
 

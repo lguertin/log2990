@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { CrossWordGrid } from "../types/crosswordGrid";
 import { GRID_DIMENSION, GameDifficulty, EMPTY_CELL } from "../../../../../../common/crossword/constant";
-import { WordFiller } from "./wordFiller";
-import { BlackCellFiller } from "./blackCellFiller";
+import { WordFiller } from "../crossword-content-filler/wordFiller";
+import { BlackCellFiller } from "../crossword-content-filler/blackCellFiller";
 import { WordDispenser } from "../wordDispenser";
 
 const grid: CrossWordGrid = new CrossWordGrid(GRID_DIMENSION);

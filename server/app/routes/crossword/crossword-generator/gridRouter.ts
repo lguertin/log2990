@@ -1,4 +1,4 @@
-import { CrossWordCreator } from "./CrossWordCreator";
+import { CrossWordCreator } from "./crossWordCreator";
 import { injectable } from "inversify";
 import { Router, Request, Response, NextFunction } from "express";
 import {GridWord, GameDifficulty} from "../../../../../common/crossword/constant";

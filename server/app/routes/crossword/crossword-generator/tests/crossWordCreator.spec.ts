@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { CrossWordCreator } from "./CrossWordCreator";
-import { GameDifficulty, GridWord } from "../../../../../common/crossword/constant";
+import { CrossWordCreator } from "../crossWordCreator";
+import { GameDifficulty, GridWord } from "../../../../../../common/crossword/constant";
 
 const maxTimeoutTime: number = 45000;
 const MINIMUM_WORD_COUNT: number = 20;

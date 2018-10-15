@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import {WordCache} from "./wordCache";
+import {WordCache} from "../wordCache";
 
 describe("Testing word cache", () => {
     const wordCacheToBeTested: WordCache = new WordCache();
