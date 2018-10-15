@@ -1,7 +1,7 @@
 import {Cell} from "./cell";
-import { Direction, EMPTY_CELL, BLACK_CELL } from "../../../../../common/crossword/constant";
+import { Direction, EMPTY_CELL, BLACK_CELL } from "../../../../../../common/crossword/constant";
 
-export class Grid {
+export class CrossWordGrid {
     private cells: Cell[][] ;
 
     constructor(private dimension: number) {

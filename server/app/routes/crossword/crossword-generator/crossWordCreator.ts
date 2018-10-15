@@ -1,21 +1,24 @@
-import { Grid } from "./grid";
+import { CrossWordGrid } from "./types/crosswordGrid";
 import { GameDifficulty, GridWord, GRID_DIMENSION } from "../../../../../common/crossword/constant";
-import { BlackCellFiller } from "./blackCellFiller";
+import { BlackCellFiller } from "./crossword-content-filler/blackCellFiller";
 import { injectable } from "inversify";
-import { WordFiller } from "./wordFiller";
+import { WordFiller } from "./crossword-content-filler/wordFiller";
 import { WordSlot, LEXICON_DEFINITION } from "./constant";
 import { DataFetcher} from "../lexical-service/dataFetcher";
 
 @injectable()
-export class GridFiller {
+export class CrossWordCreator {
 
-    public static async createGrid(difficulty: GameDifficulty): Promise<Array<GridWord>> {
-        const grid: Grid = new Grid(GRID_DIMENSION);
-        BlackCellFiller.execute(grid);
+    public static async createCrossWord(difficulty: GameDifficulty): Promise<Array<GridWord>> {
+        const grid: CrossWordGrid = new CrossWordGrid(GRID_DIMENSION);
         const wordFiller: WordFiller = new WordFiller(difficulty);
+
+        BlackCellFiller.execute(grid);
         wordFiller.execute(grid);
+
         let gridWords: Array<GridWord> ;
-        gridWords = this.createParsedData(wordFiller.getHistory());
+        gridWords = this.createParsedData(wordFiller.insertedWordsHistory);
+
         for (const gridWord of gridWords) {
             const definitions: string[] = await this.assignDefinitions(gridWord);
             gridWord.definition = definitions[(difficulty === GameDifficulty.Easy) ? 0 : 1];

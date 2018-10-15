@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { GridFiller } from "./gridFiller";
+import { CrossWordCreator } from "./CrossWordCreator";
 import { GameDifficulty, GridWord } from "../../../../../common/crossword/constant";
 
 const maxTimeoutTime: number = 45000;
@@ -7,14 +7,14 @@ const MINIMUM_WORD_COUNT: number = 20;
 
 describe("GridFiller", () => {
     it("should create a grid with minimum 20 words", (done: MochaDone) => {
-        GridFiller.createGrid(GameDifficulty.Hard).then((gridWords: GridWord[]) => {
+        CrossWordCreator.createCrossWord(GameDifficulty.Hard).then((gridWords: GridWord[]) => {
             expect(gridWords.length).to.be.least(MINIMUM_WORD_COUNT, "Grid contains less than 20 words");
         }).catch(() => { console.error("GridFiller Spec: Could not generate a grid."); });
         done();
     }).timeout(maxTimeoutTime);
 
     it("should create a grid with definitions which are not containing the word", async (done: MochaDone) => {
-        GridFiller.createGrid(GameDifficulty.Hard).then((gridWords: GridWord[]) => {
+        CrossWordCreator.createCrossWord(GameDifficulty.Hard).then((gridWords: GridWord[]) => {
             expect(areWordsWithinDefinition(gridWords)).to.equal(false);
         }).catch(() => { console.error("GridFiller Spec: Could not generate a grid."); });
         done();

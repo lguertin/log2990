@@ -2,9 +2,9 @@
 
 import { expect } from "chai";
 import { BlackCellFiller } from "./blackCellFiller";
-import { Grid } from "./grid";
-import { GRID_DIMENTION, Direction, BLACK_CELL } from "../../../../../common/crossword/constant";
-import { MINIMUM_WORD_LENGTH } from "./constant";
+import { CrossWordGrid } from "../types/crosswordGrid";
+import { GRID_DIMENTION, Direction, BLACK_CELL } from "../../../../../../common/crossword/constant";
+import { MINIMUM_WORD_LENGTH } from "../constant";
 
 interface BlackCellPosition {
     readonly i: number;
@@ -45,7 +45,7 @@ export const blackCellLocations3: Array<BlackCellPosition> = [
 export const SMALL_GRID: number = 5;
 export const MEDIUM_GRID: number = 6;
 
-const grid10x10: Grid = new Grid(GRID_DIMENTION);
+const grid10x10: CrossWordGrid = new CrossWordGrid(GRID_DIMENTION);
 BlackCellFiller.execute(grid10x10);
 
 /*  WWBWW
@@ -54,7 +54,7 @@ BlackCellFiller.execute(grid10x10);
     WWWWW
     WWWWW
 */
-const gridTest1: Grid = new Grid(SMALL_GRID);
+const gridTest1: CrossWordGrid = new CrossWordGrid(SMALL_GRID);
 setBlackCells(gridTest1, blackCellLocations1);
 
 /*  WWBWWW
@@ -64,7 +64,7 @@ setBlackCells(gridTest1, blackCellLocations1);
     WWWWWW
     WWWWWW
 */
-const gridTest2: Grid = new Grid(MEDIUM_GRID);
+const gridTest2: CrossWordGrid = new CrossWordGrid(MEDIUM_GRID);
 setBlackCells(gridTest2, blackCellLocations2);
 
 /*  BWWWBW
@@ -74,7 +74,7 @@ setBlackCells(gridTest2, blackCellLocations2);
     WWBWWB
     BWWBBB
 */
-const gridTest3: Grid = new Grid(MEDIUM_GRID);
+const gridTest3: CrossWordGrid = new CrossWordGrid(MEDIUM_GRID);
 setBlackCells(gridTest3, blackCellLocations3);
 
 describe("BlackCellFiller", () => {
@@ -110,7 +110,7 @@ describe("BlackCellFiller", () => {
 });
 
 /*Function previously tested with previous algorithm*/
-function isIsolatedWhiteCell(grid: Grid, i: number, j: number): boolean {
+function isIsolatedWhiteCell(grid: CrossWordGrid, i: number, j: number): boolean {
     return (grid.isBlackCellAtPosition(i, j - 1) &&
             grid.isBlackCellAtPosition(i, j + 1) &&
             grid.isBlackCellAtPosition(i + 1, j) &&
@@ -118,7 +118,7 @@ function isIsolatedWhiteCell(grid: Grid, i: number, j: number): boolean {
 }
 
 /*Function previously tested with previous algorithm*/
-function isValidCellsPosition(grid: Grid): boolean {
+function isValidCellsPosition(grid: CrossWordGrid): boolean {
     let i: number = 0;
     let j: number = 0;
     while (i < grid.getDimension()) {
@@ -136,7 +136,7 @@ function isValidCellsPosition(grid: Grid): boolean {
 }
 
 /*Function previously tested with previous algorithm*/
-function isValidByWordRatio(grid: Grid ): boolean {
+function isValidByWordRatio(grid: CrossWordGrid ): boolean {
     for (let x: number = 0 ; x < grid.getDimension(); x++) {
         let j: number = 0;
         while (grid.getCellsDistanceToBlack(x, j, Direction.HORIZONTAL) < MINIMUM_WORD_LENGTH) {
@@ -157,7 +157,7 @@ function isValidByWordRatio(grid: Grid ): boolean {
     return true;
 }
 
-function setBlackCells(grid: Grid, blackCellLocations: Array<BlackCellPosition>): void {
+function setBlackCells(grid: CrossWordGrid, blackCellLocations: Array<BlackCellPosition>): void {
     for (const blackCellLocation of blackCellLocations) {
         grid.setCellValue(blackCellLocation.i, blackCellLocation.j, BLACK_CELL);
     }

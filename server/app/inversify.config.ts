@@ -8,8 +8,8 @@ import { Routes } from "./routes";
 import { CrosswordRoutes } from "./routes/crossword/crosswordRoutes";
 import { LexicalService } from "./routes/crossword/lexical-service/lexicalService";
 import { WordFetcher } from "./routes/crossword/lexical-service/wordFetcher";
-import { GridRouter } from "./routes/crossword/grid-generator/gridRouter";
-import { GridFiller } from "./routes/crossword/grid-generator/gridFiller";
+import { GridRouter } from "./routes/crossword/crossword-generator/gridRouter";
+import { CrossWordCreator } from "./routes/crossword/crossword-generator/crossWordCreator";
 import {DataBaseHandler} from "./routes/racing/dataBaseHandler";
 import {TrackRouter} from "./routes/racing/tracksRoutes";
 
@@ -26,7 +26,7 @@ container.bind(Types.LexicalService).to(LexicalService);
 container.bind(Types.WordFetcher).to(WordFetcher);
 
 container.bind(Types.GridRouter).to(GridRouter);
-container.bind(Types.GridFiller).to(GridFiller);
+container.bind(Types.GridFiller).to(CrossWordCreator);
 
 container.bind(Types.DataBaseHandler).to(DataBaseHandler);
 container.bind(Types.TrackRouter).to(TrackRouter);

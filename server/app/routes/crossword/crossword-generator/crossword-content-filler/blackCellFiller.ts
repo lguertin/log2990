@@ -1,16 +1,16 @@
-import { Direction, BLACK_CELL, EMPTY_CELL } from "../../../../../common/crossword/constant";
-import { Grid } from "./grid";
-import { MINIMUM_WORD_LENGTH, HORIZONTAL_PROBABILITY, VERTICAL_PROBABILITY} from "./constant";
+import { Direction, BLACK_CELL, EMPTY_CELL } from "../../../../../../common/crossword/constant";
+import { CrossWordGrid } from "../types/crosswordGrid";
+import { MINIMUM_WORD_LENGTH, HORIZONTAL_PROBABILITY, VERTICAL_PROBABILITY} from "../constant";
 
 export class BlackCellFiller {
 
-    public static execute(grid: Grid): void {
+    public static execute(grid: CrossWordGrid): void {
         this.fillGridWithBlackCells(grid);
         this.removeBlackCells(grid, Direction.HORIZONTAL);
         this.removeBlackCells(grid, Direction.VERTICAL);
     }
 
-    private static fillGridWithBlackCells(grid: Grid): void {
+    private static fillGridWithBlackCells(grid: CrossWordGrid): void {
         for (let i: number = 0; i < grid.getDimension(); i++) {
             for (let j: number = 0; j < grid.getDimension(); j++) {
                 grid.setCellValue(i, j, BLACK_CELL);
@@ -18,7 +18,7 @@ export class BlackCellFiller {
         }
     }
 
-    private static removeBlackCells(grid: Grid, direction: Direction): void {
+    private static removeBlackCells(grid: CrossWordGrid, direction: Direction): void {
         for (let i: number = 0; i < grid.getDimension();) {
             for (let j: number = 0; j < grid.getDimension();) {
                 if (i < grid.getDimension()) {

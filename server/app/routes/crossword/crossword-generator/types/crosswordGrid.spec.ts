@@ -1,7 +1,7 @@
 /* tslint:disable:no-magic-numbers */
 import { expect, assert } from "chai";
-import { Grid } from "./grid";
-import { BLACK_CELL, Direction } from "../../../../../common/crossword/constant";
+import { CrossWordGrid } from "./crosswordGrid";
+import { BLACK_CELL, Direction } from "../../../../../../common/crossword/constant";
 
 const SMALL_GRID: number = 2;
 const MEDIUM_GRID: number = 8;
@@ -14,9 +14,9 @@ const blackCellLocations: Array<{i: number, j: number}> = [
 ];
 
 describe("Grid", () => {
-    const grid: Grid = new Grid(SMALL_GRID);
+    const grid: CrossWordGrid = new CrossWordGrid(SMALL_GRID);
 
-    const grid2: Grid = new Grid(MEDIUM_GRID);
+    const grid2: CrossWordGrid = new CrossWordGrid(MEDIUM_GRID);
 
     for (const blackCellLocation of blackCellLocations) {
         grid2.setCellValue(blackCellLocation.i, blackCellLocation.j, BLACK_CELL);

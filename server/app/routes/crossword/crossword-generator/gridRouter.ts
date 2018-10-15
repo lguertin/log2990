@@ -1,4 +1,4 @@
-import { GridFiller } from "./gridFiller";
+import { CrossWordCreator } from "./CrossWordCreator";
 import { injectable } from "inversify";
 import { Router, Request, Response, NextFunction } from "express";
 import {GridWord, GameDifficulty} from "../../../../../common/crossword/constant";
@@ -11,7 +11,7 @@ export class GridRouter {
         const router: Router = Router();
 
         router.get("/Easy", (req: Request, res: Response, next: NextFunction) => {
-            GridFiller.createGrid(GameDifficulty.Easy)
+            CrossWordCreator.createCrossWord(GameDifficulty.Easy)
                 .then((grid: Array<GridWord>) => {
                     res.send(grid);
                 })
@@ -21,7 +21,7 @@ export class GridRouter {
         });
 
         router.get("/Medium", (req: Request, res: Response, next: NextFunction) => {
-            GridFiller.createGrid(GameDifficulty.Medium)
+            CrossWordCreator.createCrossWord(GameDifficulty.Medium)
                 .then((grid: Array<GridWord>) => {
                     res.send(grid);
                 })
@@ -31,7 +31,7 @@ export class GridRouter {
         });
 
         router.get("/Hard", (req: Request, res: Response, next: NextFunction) => {
-            GridFiller.createGrid(GameDifficulty.Hard)
+            CrossWordCreator.createCrossWord(GameDifficulty.Hard)
                 .then((grid: Array<GridWord>) => {
                     res.send(grid);
                 })

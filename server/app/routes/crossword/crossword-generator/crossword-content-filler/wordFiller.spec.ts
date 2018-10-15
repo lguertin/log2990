@@ -1,11 +1,11 @@
 import { expect } from "chai";
-import { Grid } from "./grid";
-import { GRID_DIMENSION, GameDifficulty, EMPTY_CELL } from "../../../../../common/crossword/constant";
+import { CrossWordGrid } from "../types/crosswordGrid";
+import { GRID_DIMENSION, GameDifficulty, EMPTY_CELL } from "../../../../../../common/crossword/constant";
 import { WordFiller } from "./wordFiller";
 import { BlackCellFiller } from "./blackCellFiller";
-import { WordDispenser } from "./wordDispenser";
+import { WordDispenser } from "../wordDispenser";
 
-const grid: Grid = new Grid(GRID_DIMENSION);
+const grid: CrossWordGrid = new CrossWordGrid(GRID_DIMENSION);
 const wordFiller: WordFiller = new WordFiller(GameDifficulty.Easy);
 const wordDispenser: WordDispenser = new WordDispenser(GameDifficulty.Easy);
 const maxTimeoutTime: number = 20000;
@@ -24,7 +24,7 @@ describe("WordFiller", () => {
 });
 
 /* tslint:disable-next-line:only-arrow-functions */
-function isAllCellsFilled(aGrid: Grid): boolean {
+function isAllCellsFilled(aGrid: CrossWordGrid): boolean {
     for (let i: number = 0; i < aGrid.getDimension(); i++) {
         for (let j: number = 0; j < aGrid.getDimension(); j++) {
             if (aGrid.getCell(i, j).getLetter() === EMPTY_CELL) {
@@ -37,8 +37,8 @@ function isAllCellsFilled(aGrid: Grid): boolean {
 }
 
 /* tslint:disable-next-line:only-arrow-functions */
-function isValidWords(aGrid: Grid): boolean {
-    for (const wordSlot of wordFiller.getHistory()) {
+function isValidWords(aGrid: CrossWordGrid): boolean {
+    for (const wordSlot of wordFiller.insertedWordsHistory) {
         if (!isValidWord(wordSlot.word.getWord())) {
             return false;
         }

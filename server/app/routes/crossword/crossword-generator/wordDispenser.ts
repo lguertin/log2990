@@ -10,7 +10,7 @@ export class WordDispenser {
         this.cache = new WordCache();
     }
 
-    private getWordsFromService(wordConstraint: string): string[] {
+    private GetWordsFromService(wordConstraint: string): string[] {
         let done: boolean = false;
         let newWords: string[];
         DataFetcher.getApiData(LEXICON_WORDS_URL + this.getUrlByDifficulty() + "/" + wordConstraint).then((wordsData: string) => {
@@ -34,7 +34,7 @@ export class WordDispenser {
 
     public getWord(wordConstraint: string): string {
         if (!this.cache.containsSearch(wordConstraint)) {
-            this.getWordsFromService(wordConstraint);
+            this.GetWordsFromService(wordConstraint);
         }
 
         return this.cache.popRandomWord(wordConstraint);

@@ -1,5 +1,5 @@
 import { Direction } from "../../../../../common/crossword/constant";
-import { Word } from "./word";
+import { Word } from "./types/word";
 
 export const LEXICON_WORD_URL: string = "http://localhost:3000/crossword/lexicon/word/";
 export const LEXICON_WORDS_URL: string = "http://localhost:3000/crossword/lexicon/words/";

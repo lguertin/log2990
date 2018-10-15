@@ -1,6 +1,6 @@
 import { Cell } from "./cell";
-import { INTEROGATION_MARK } from "./constant";
-import { EMPTY_CELL } from "../../../../../common/crossword/constant";
+import { INTEROGATION_MARK } from "../constant";
+import { EMPTY_CELL } from "../../../../../../common/crossword/constant";
 
 export class Word {
     constructor(private word: string) {

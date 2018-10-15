@@ -2,7 +2,7 @@ import { injectable, inject } from "inversify";
 import { Router } from "express";
 import { LexicalService } from "./lexical-service/lexicalService";
 import Types from "../../types";
-import { GridRouter } from "./grid-generator/gridRouter";
+import { GridRouter } from "./crossword-generator/gridRouter";
 
 @injectable()
 export class CrosswordRoutes {

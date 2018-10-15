@@ -1,4 +1,5 @@
 export class Cell {
+
     private usedCounter: number;
     constructor(private i: number, private j: number, private letter: string) {
         this.usedCounter  = 0 ;
